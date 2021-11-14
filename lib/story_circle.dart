@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:stories_for_flutter/full_page_view.dart';
 import 'package:stories_for_flutter/stories_for_flutter.dart';
 
 class StoryCircle extends StatelessWidget {
@@ -94,27 +93,28 @@ class StoryCircle extends StatelessWidget {
         children: <Widget>[
           const SizedBox(height: 7),
           InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                CupertinoPageRoute(
-                  builder: (context) => FullPageView(
-                    storiesMapList: story,
-                    storyNumber: selectedIndex,
-                    fullPagetitleStyle: fullPagetitleStyle,
-                    displayProgress: displayProgress,
-                    fullpageVisitedColor: fullpageVisitedColor,
-                    fullpageUnvisitedColor: fullpageUnvisitedColor,
-                    fullpageThumbnailSize: fullpageThumbnailSize,
-                    showStoryNameOnFullPage: showStoryNameOnFullPage,
-                    showThumbnailOnFullPage: showThumbnailOnFullPage,
-                    storyStatusBarColor: storyStatusBarColor,
-                    onPageChanged: onPageChanged,
-                    autoPlayDuration: autoPlayDuration,
-                  ),
-                ),
-              );
-            },
+            onTap: story![selectedIndex!].onTap,
+            // onTap: () {
+            //   Navigator.push(
+            //     context,
+            //     CupertinoPageRoute(
+            //       builder: (context) => FullPageView(
+            //         storiesMapList: story,
+            //         storyNumber: selectedIndex,
+            //         fullPagetitleStyle: fullPagetitleStyle,
+            //         displayProgress: displayProgress,
+            //         fullpageVisitedColor: fullpageVisitedColor,
+            //         fullpageUnvisitedColor: fullpageUnvisitedColor,
+            //         fullpageThumbnailSize: fullpageThumbnailSize,
+            //         showStoryNameOnFullPage: showStoryNameOnFullPage,
+            //         showThumbnailOnFullPage: showThumbnailOnFullPage,
+            //         storyStatusBarColor: storyStatusBarColor,
+            //         onPageChanged: onPageChanged,
+            //         autoPlayDuration: autoPlayDuration,
+            //       ),
+            //     ),
+            //   );
+            // },
             child: CircleAvatar(
               radius: borderThickness != null
                   ? altPadding + borderThickness!

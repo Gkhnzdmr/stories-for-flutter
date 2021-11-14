@@ -131,9 +131,14 @@ class StoryItem {
   ImageProvider thumbnail;
 
   /// List of pages to display as stories under this story
-  List<Scaffold> stories;
+  List<Scaffold>? stories;
+
+  Function()? onTap;
 
   /// Add a story
   StoryItem(
-      {required this.name, required this.thumbnail, required this.stories});
+      {required this.name,
+      required this.thumbnail,
+      this.stories,
+      required this.onTap});
 }

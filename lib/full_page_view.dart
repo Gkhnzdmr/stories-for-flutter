@@ -283,8 +283,8 @@ class FullPageViewState extends State<FullPageView> {
 List<Widget> getStoryList(List<StoryItem> storiesMapList) {
   List<Widget> imagesList = [];
   for (int i = 0; i < storiesMapList.length; i++) {
-    for (int j = 0; j < storiesMapList[i].stories.length; j++) {
-      imagesList.add(storiesMapList[i].stories[j]);
+    for (int j = 0; j < storiesMapList[i].stories!.length; j++) {
+      imagesList.add(storiesMapList[i].stories![j]);
     }
   }
   return imagesList;
@@ -294,7 +294,7 @@ List<int> getStoryLengths(List<StoryItem> storiesMapList) {
   List<int> intList = [];
   int count = 0;
   for (int i = 0; i < storiesMapList.length; i++) {
-    count = count + storiesMapList[i].stories.length;
+    count = count + storiesMapList[i].stories!.length;
     intList.add(count);
   }
   return intList;
@@ -323,7 +323,7 @@ numOfCompleted(List<int> listLengths, int index) {
 getInitialIndex(int storyNumber, List<StoryItem>? storiesMapList) {
   int total = 0;
   for (int i = 0; i < storyNumber; i++) {
-    total += storiesMapList![i].stories.length;
+    total += storiesMapList![i].stories!.length;
   }
   return total;
 }

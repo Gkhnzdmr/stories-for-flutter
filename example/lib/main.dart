@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
                     thumbnail: const NetworkImage(
                       "https://assets.materialup.com/uploads/82eae29e-33b7-4ff7-be10-df432402b2b6/preview",
                     ),
+                    onTap: () {},
                     stories: [
                       Scaffold(
                         body: Container(
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
                       ),
                     ]),
                 StoryItem(
+                  onTap: () {},
                   name: "2nd",
                   thumbnail: const NetworkImage(
                     "https://www.shareicon.net/data/512x512/2017/03/29/881758_cup_512x512.png",
